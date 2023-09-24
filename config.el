@@ -138,3 +138,14 @@ _h_ decrease width    _l_ increase width
   )
 
 (global-set-key (kbd "C-c [") #'window-toggle-side-windows)
+
+
+
+(require 'org-download)
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
+
+;; Set calendar to start on monday
+(setq calendar-week-start-day 1)
+
+(setq org-latex-packages-alist '(("margin=2cm" "geometry" nil)))
