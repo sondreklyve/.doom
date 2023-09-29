@@ -80,7 +80,6 @@
 (setq mac-control-modifier 'control)
 
 (define-key evil-normal-state-map (kbd "-") 'dired-jump)
-(setq ranger-show-hidden t)
 (setq lsp-pyright-python-executable-cmd "python3")
 
 ;; Background transparency
