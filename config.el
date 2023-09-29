@@ -149,3 +149,5 @@ _h_ decrease width    _l_ increase width
 (setq calendar-week-start-day 1)
 
 (setq org-latex-packages-alist '(("margin=2cm" "geometry" nil)))
+
+(setq warning-suppress-types (append warning-suppress-types '((org-element-cache))))
