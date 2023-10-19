@@ -88,32 +88,12 @@
 (setq indicate-empty-lines 'nil)
 
 
-;; Shamelessly copied from https://codingstruggles.com/emacs/resizing-windows-doom-emacs.html
-(defhydra doom-window-resize-hydra (:hint nil)
-  "
-             _k_ increase height
-_h_ decrease width    _l_ increase width
-             _j_ decrease height
-"
-  ("h" evil-window-decrease-width)
-  ("j" evil-window-increase-height)
-  ("k" evil-window-decrease-height)
-  ("l" evil-window-increase-width)
-
-  ("q" nil))
-
-(defhydra doom-hydra-text-scale (:timeout 4)
-  "scale text"
-  ("j" text-scale-increase "in")
-  ("k" text-scale-decrease "out")
-  ("f" nil "finished" :exit t))
-
-
+;; Map default functions from hydra package
 (map!
     (:prefix "SPC w"
-      :desc "Hydra resize" :n "SPC" #'doom-window-resize-hydra/body)
+      :desc "Hydra window nav" :n "SPC" #'+hydra/window-nav/body)
     (:prefix "SPC w"
-      :desc "Hydra scale text" :n ";" #'doom-hydra-text-scale/body))
+      :desc "Hydra text zoom" :n ";" #'+hydra/text-zoom/body))
 
 
 (map! :after evil
